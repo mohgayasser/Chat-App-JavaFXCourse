@@ -29,6 +29,7 @@ public class D01L01 extends Application {
             scene.getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("styles/style.css" )));
 
             primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
             primaryStage.setTitle("JETS Chat Room");
             primaryStage.show();
          

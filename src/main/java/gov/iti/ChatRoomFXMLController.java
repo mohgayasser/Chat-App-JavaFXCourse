@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
@@ -82,20 +83,24 @@ public class ChatRoomFXMLController implements Initializable{
             newMessage.getChildren().add(imageIcon);
             
             TextFlow textFlow = new TextFlow();
-            textFlow.setStyle("-fx-background-color: orange; -fx-padding: 5px;-fx-border-insets: 5px;-fx-background-insets: 5px; -fx-border-radius: 15 15 15 0; -fx-background-radius: 15 15 15 0;");
+            textFlow.setStyle("-fx-background-color: orange; -fx-padding: 10px;-fx-background-insets: 3px; -fx-border-radius: 15 15 15 0; -fx-background-radius: 15 15 15 0;"); //-fx-border-insets: 20px;
 
             Text text = new Text(typing_textField.getText());
             typing_textField.setText("");
-            text.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+            text.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 14));
+            
             
             textFlow.getChildren().add(text);
             
             newMessage.getChildren().add(textFlow);
-            newMessage.setFillHeight(true);
+            // newMessage.setFillHeight(true);
             System.out.println(textFlow.getHeight());
            
             messages_vbox.getChildren().add(newMessage);
-           
+            // messages_vbox.
+            // messages_scroll_pane.setVvalue(messages_scroll_pane.getVmax());
+            // messages_scroll_pane.setVvalue(1.0);
+            messages_vbox.heightProperty().addListener(observable -> messages_scroll_pane.setVvalue(1D)); 
             System.out.println("Hello in enter");
            }
            else {

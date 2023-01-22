@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
@@ -24,6 +25,8 @@ import javafx.stage.Stage;
 
 public class LoginFXMLController implements Initializable{
 
+    @FXML
+    private BorderPane main_border_pane;
     @FXML
     private Button select_picture_button;
     @FXML
@@ -122,6 +125,9 @@ public class LoginFXMLController implements Initializable{
           primaryStage.close();
 
           primaryStage.setScene(scene);
+          primaryStage.setResizable(true);
+          primaryStage.setMinHeight(650);
+          primaryStage.setMinWidth(430);
           primaryStage.setTitle("JETS Chat Room");
           primaryStage.show();
         }catch(IOException exception){}
