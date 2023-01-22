@@ -25,19 +25,13 @@ public class D01L01 extends Application {
             Parent root = loader.load(getClass().getClassLoader().getResource("login_scene.fxml").openStream());
             
             Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
-            primaryStage.show();
-           
-            FXMLLoader loader2 = new FXMLLoader();
-            Parent secondParent  = loader2.load(getClass().getClassLoader().getResource("chat_room_scene.fxml").openStream());
-            ChatRoomFXMLController chatRoomFXMLController = new ChatRoomFXMLController();
-            loader2.setController(chatRoomFXMLController);
             
-            Scene secondScene = new Scene(secondParent);
-            
-            loginController.setSecondScene(secondScene , loader2);
+            scene.getStylesheets().add(String.valueOf(getClass().getClassLoader().getResource("styles/style.css" )));
 
-            
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("JETS Chat Room");
+            primaryStage.show();
+         
         } catch (IOException e) {
             e.printStackTrace();
         }

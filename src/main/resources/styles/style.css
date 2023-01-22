@@ -1,0 +1,21 @@
+.button:hover {
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-insets: 2;
+    -fx-text-fill: black;
+}
+button{
+        -fx-background-radius: 30;
+
+}
+#username_textField,typing_textField{
+    -fx-text-fill: #ffffff;  
+}
+
+#typing_textField{
+    -fx-text-fill: #ffffff;  
+	font: 14px sans-serif;
+}
+#text1{
+	font: 14px sans-serif;
+	color: black;
+}
